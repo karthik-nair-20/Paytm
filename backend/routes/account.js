@@ -33,6 +33,10 @@ router.get("/balance", userMiddleware, async (req, res) => {
   const account = await Account.findOne({
     userId: req.userId
   });
+  if(!account)
+  {
+    res.status(200).json({"msg" :"User not found"})
+  }
 
   res.json({
     balance: account.balance

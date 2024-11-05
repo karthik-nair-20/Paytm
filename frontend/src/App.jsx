@@ -10,14 +10,43 @@ Axios.defaults.baseURL = 'http://localhost:3000/api/v1';
 function App() {
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/signup" element={<Signup />}  />
-        <Route path="/signin" element={<Signin />}  />
-        <Route path="/dashboard" element={<Dashboard />}  />
-        <Route path="/send" element={<Send />}  />
-      </Routes>
-    </Router>
+    <div className="bg-darkGray text-pureWhite">
+      <Router>
+        <Routes>
+          <Route path="/signup" element={
+            <div className="bg-lightGray">
+              <Signup />
+            </div>
+          }
+          />
+          <Route
+            path="/signin"
+            element={
+              <div className="bg-lightGray">
+                <Signin />
+              </div>
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <div className="bg-gray-950">
+                <Dashboard />
+              </div>
+            }
+          />
+          <Route
+            path="/send"
+            element={
+              <div className="bg-paleGray">
+                <Send />
+              </div>
+            }
+          />
+
+        </Routes>
+      </Router>
+    </div>
   )
 }
 
